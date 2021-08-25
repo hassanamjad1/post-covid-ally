@@ -2,11 +2,16 @@ import React from 'react'
 import {auth} from '../firebase.js'
 import { useHistory, Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
-const useStyles = makeStyles((theme) => ({linkStyle: {
+const useStyles = makeStyles((theme) => ({
+    linkStyle: {
       color: '#f3f3f3',
       textDecoration: 'none',
-      fontSize: '40px',
+      fontSize: '30px',
+      fontWeight: "200",
       marginRight: theme.spacing(2)
+    }, p: {
+      fontSize: '18px',
+      marginLeft: theme.spacing(1)
     }
   }));
 function SignOut() {
@@ -18,7 +23,7 @@ function SignOut() {
       }
     return (
         <div>
-            <Link to='/signin' onClick={handleLogout} className={classes.linkStyle}><i class="fas fa-sign-out-alt"></i></Link>
+            <Link to='/' onClick={handleLogout} className={classes.linkStyle}><i class="fas fa-sign-out-alt"></i><span className={classes.p}>Signout</span></Link>
         </div>
     )
 }
